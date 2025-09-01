@@ -24,7 +24,7 @@ public class JDlgUsuarios extends javax.swing.JDialog {
         initComponents();
         setTitle("Cadastro de Usuários");
         setLocationRelativeTo(null);
-        Util.habilitar(false, jTxtCodigo, jTxtNome, jPwfSenha, jCboNivel, jChbAtivo, jTxtApelido, jFmtCpf, jFmtDataDeNascimento );
+        Util.habilitar(false, jTxtCodigo, jTxtNome, jPwfSenha, jCboNivel, jChbAtivo, jTxtApelido, jFmtCpf, jFmtDataDeNascimento, jBtnAlterar, jBtnExcluir, jBtnConfirmar, jBtnCancelar );
     }
     
 
@@ -248,37 +248,48 @@ public class JDlgUsuarios extends javax.swing.JDialog {
 
     private void jBtnIncluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnIncluirActionPerformed
         // TODO add your handling code here:
+        Util.habilitar(true, jTxtCodigo, jTxtNome, jPwfSenha, jCboNivel, jChbAtivo, jTxtApelido, jFmtCpf, jFmtDataDeNascimento, jBtnConfirmar, jBtnCancelar );
+        Util.habilitar(false, jBtnIncluir, jBtnPesquisar);
+        Util.limpar(jTxtCodigo, jTxtNome, jPwfSenha, jCboNivel, jChbAtivo, jTxtApelido, jFmtCpf, jFmtDataDeNascimento);
 
 
     }//GEN-LAST:event_jBtnIncluirActionPerformed
 
     private void jBtnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAlterarActionPerformed
         // TODO add your handling code here:
+                Util.habilitar(true, jTxtCodigo, jTxtNome, jPwfSenha, jCboNivel, jChbAtivo, jTxtApelido, jFmtCpf, jFmtDataDeNascimento, jBtnConfirmar, jBtnCancelar );
+                Util.habilitar(false,jBtnExcluir, jBtnIncluir, jBtnAlterar);
+
 
     }//GEN-LAST:event_jBtnAlterarActionPerformed
 
     private void jBtnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnExcluirActionPerformed
         // TODO add your handling code here:
+        Util.habilitar(false, jBtnAlterar, jBtnCancelar, jBtnExcluir);
+        Util.habilitar(true, jBtnIncluir, jBtnPesquisar);
 
     }//GEN-LAST:event_jBtnExcluirActionPerformed
 
 
     private void jBtnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnConfirmarActionPerformed
         // TODO add your handling code here:
- 
-
+        Util.habilitar(false, jTxtCodigo, jTxtNome, jPwfSenha, jCboNivel, jChbAtivo, jTxtApelido, jFmtCpf, jFmtDataDeNascimento, jBtnConfirmar, jBtnCancelar );
+        Util.habilitar(true, jBtnIncluir, jBtnPesquisar);
 
     }//GEN-LAST:event_jBtnConfirmarActionPerformed
 
     private void jBtnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnPesquisarActionPerformed
-        // TODO add your handling code here: 
+        // TODO add your handling code here:
+        Util.habilitar(true, jBtnAlterar, jBtnExcluir, jBtnCancelar);
+        Util.habilitar(false,jBtnIncluir, jBtnPesquisar);
 
 
     }//GEN-LAST:event_jBtnPesquisarActionPerformed
 
     private void jBtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCancelarActionPerformed
         // TODO add your handling code here:
-
+        Util.habilitar(false, jTxtCodigo, jTxtNome, jPwfSenha, jCboNivel, jChbAtivo, jTxtApelido, jFmtCpf, jFmtDataDeNascimento, jBtnConfirmar, jBtnCancelar, jBtnAlterar, jBtnExcluir );
+        Util.habilitar(true, jBtnIncluir, jBtnPesquisar);
     }//GEN-LAST:event_jBtnCancelarActionPerformed
 
     private void jTxtCodigoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTxtCodigoFocusLost
